@@ -8,7 +8,7 @@ describe('Sign In page', () => {
   it('should log in with valid credentials', () => {
     cy.login('tomsmith', 'SuperSecretPassword!');
 
-    cy.showMessage('You logged into a secure area!');
+    cy.showMessage('#flash', 'You logged into a secure area!');
   });
 
   it('should log out successfully', () => {
@@ -24,6 +24,6 @@ describe('Sign In page', () => {
   it('should not log in with wrong credentials', () => {
     cy.login('wrongUser', 'wrongPass!');
 
-    cy.showMessage('Your username is invalid!');
+    cy.showMessage('.error', 'Your username is invalid!');
   });
 });

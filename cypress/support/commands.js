@@ -30,6 +30,8 @@ Cypress.Commands.add('login', (username, password) => {
 
   cy.get('.radius').click();
 });
-Cypress.Commands.add('showMessage', (message) => {
-  cy.get('#flash').should('contain.text', message);
+Cypress.Commands.add('showMessage', (value, message) => {
+  cy.get(value)
+    .should('be.visible')
+    .should('contain.text', message);
 });
